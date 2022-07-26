@@ -539,7 +539,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.6794398
+      m_AnimationSpeed: 2.0989707
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 2, y: -4, z: 0}
@@ -547,7 +547,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.6167833
+      m_AnimationSpeed: 2.4542835
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 3, y: -4, z: 0}
@@ -555,7 +555,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.6478919
+      m_AnimationSpeed: 2.794642
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 2, y: 0, z: 0}
@@ -563,7 +563,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.6958272
+      m_AnimationSpeed: 1.7854512
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -1, y: 1, z: 0}
@@ -571,7 +571,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 2.4849794
+      m_AnimationSpeed: 2.722529
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -654,7 +654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &346724426
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2019,7 +2019,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2118,8 +2118,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkManager: {fileID: 1525298672}
   questManager: {fileID: 69568437}
-  talkPanel: {fileID: 999378813}
-  talkText: {fileID: 665886390}
+  talkPanel: {fileID: 999378817}
+  portraitAnim: {fileID: 1031115422}
+  prevSprite: {fileID: 0}
+  talk: {fileID: 665886392}
   scanObject: {fileID: 0}
   portraitImg: {fileID: 1031115419}
   isAction: 0
@@ -2151,6 +2153,8 @@ GameObject:
   - component: {fileID: 665886389}
   - component: {fileID: 665886391}
   - component: {fileID: 665886390}
+  - component: {fileID: 665886392}
+  - component: {fileID: 665886393}
   m_Layer: 5
   m_Name: 'Text '
   m_TagString: Untagged
@@ -2221,6 +2225,116 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665886388}
   m_CullTransparentMesh: 1
+--- !u!114 &665886392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665886388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b37ba77604f94b84811a57ed0c718f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharPerSeconds: 20
+  EndCursor: {fileID: 346724425}
+--- !u!82 &665886393
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665886388}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &999378813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,13 +2346,14 @@ GameObject:
   - component: {fileID: 999378814}
   - component: {fileID: 999378816}
   - component: {fileID: 999378815}
+  - component: {fileID: 999378817}
   m_Layer: 5
   m_Name: Talk Set
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &999378814
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2259,7 +2374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: -500}
   m_SizeDelta: {x: -40, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &999378815
@@ -2300,6 +2415,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999378813}
   m_CullTransparentMesh: 1
+--- !u!95 &999378817
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999378813}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 451eaeddb01e24b4e8c281c4c0ace5ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1031115418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,6 +2446,7 @@ GameObject:
   - component: {fileID: 1031115421}
   - component: {fileID: 1031115420}
   - component: {fileID: 1031115419}
+  - component: {fileID: 1031115422}
   m_Layer: 5
   m_Name: Portrait
   m_TagString: Untagged
@@ -2376,6 +2512,26 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: 150}
   m_SizeDelta: {x: 141.66669, y: 191.66667}
   m_Pivot: {x: 1, y: 0}
+--- !u!95 &1031115422
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031115418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37890bfb225934294a85ad3d09f5a3ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1205486970
 GameObject:
   m_ObjectHideFlags: 0
@@ -6508,7 +6664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58392c915241f43abac06813dc77d4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 200
+  id: 4000
   isNpc: 0
 --- !u!19719996 &1607321624
 TilemapCollider2D:
@@ -9084,7 +9240,7 @@ GameObject:
   - component: {fileID: 1967917311}
   - component: {fileID: 1967917315}
   - component: {fileID: 1967917314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: compass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9497,5 +9653,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58392c915241f43abac06813dc77d4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 100
+  id: 3000
   isNpc: 0
